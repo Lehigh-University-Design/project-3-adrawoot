@@ -1,9 +1,8 @@
 #home {
-    background-color: black;
-    max-width: 100vw;
-    max-height: 100vh;
+    background: url(../img/Kobe\ Mural.png) no-repeat bottom center #000000;
+    background-size: contain;
     margin: 0px;
-    overflow: hidden;
+    height: 100vh;
 }
 
 .header {
