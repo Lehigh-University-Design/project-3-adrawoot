@@ -9,10 +9,24 @@
     display: flex;
     width: 100vw;
     padding: 2rem 3rem;
-    align-items: center;
-    flex-direction: row;
-    gap: 21rem;
+    align-items: left;
 }
+
+#leftblock {
+    width: 33%;
+    display: grid;
+    justify-items: start;
+    justify-content: start;
+}
+
+#rightblock {
+    max-width: 66%;
+    display: grid;
+    justify-content: start;
+    justify-items: start;
+}
+
+
 
 #logo {
     height: 90px;
