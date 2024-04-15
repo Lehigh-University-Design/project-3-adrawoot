@@ -1,3 +1,12 @@
+body {
+    background-color: #000000;
+    margin: 0px;
+    height: 100vh;
+    overflow: hidden;
+    --beige: #CFBE94;
+    --grey:#b8b8b8;
+    --greige: #E1DCD1;
+}
 #home {
     background: url(../img/Kobe\ Mural.png) no-repeat bottom center #000000;
     background-size: contain;
@@ -26,15 +35,12 @@
     justify-items: start;
 }
 
-
-
 #logo {
     height: 90px;
     width: auto;
 }
 
 h1 {
-    color: var(--beige, #E1DCD1);
     font-family: Montserrat;
     font-size: 3.5625rem;
     font-style: normal;
@@ -42,16 +48,22 @@ h1 {
     line-height: normal;
     text-transform: uppercase;
     max-width: fit-content;
+    background-color: #E1DCD1;
+    color: transparent;
+    text-shadow: 0px 0px 3px #dcd8cf;
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .pages {
-    color: #B8B8B8;
+    color: var(--grey, #B8B8B8);
     font-family: "Bebas Neue";
     font-size: 3.0625rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: 0.21438rem;
+    text-decoration: none;
 }
 
 nav {
@@ -62,12 +74,15 @@ nav {
     display: inline-flex
 }
 
+#about, #career {
+    color: var(--grey);
+}
+
+#people, #projects {
+    color: var(--beige);
+}
+
 .background {
     position: absolute;
     bottom: 0px;
-}
-
-#mural, #overlay {
-    background-size: cover;
-    overflow-y: hidden;
 }
