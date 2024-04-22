@@ -5,3 +5,25 @@
 #about {
     background: url(../img/metal-bg.png) #000000 20% / contain no-repeat;
 }
+
+.content {
+    display: flex;
+    width: 100vw;
+    padding: 2rem 3rem;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#image {
+    max-width: 33%;
+    display: grid;
+    justify-items: start;
+    justify-content: start;
+}
+
+#text {
+    max-width: 60%;
+    display: grid;
+    justify-content: start;
+    justify-items: start;
+}

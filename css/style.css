@@ -1,88 +1,80 @@
 body {
-    background-color: #000000;
-    margin: 0px;
-    height: 100vh;
-    overflow: hidden;
-    --beige: #CFBE94;
-    --grey:#b8b8b8;
-    --greige: #E1DCD1;
-}
-#home {
-    background: url(../img/Kobe\ Mural.png) no-repeat bottom center #000000;
-    background-size: contain;
-    margin: 0px;
-    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    color: white;
 }
 
 .header {
     display: flex;
-    width: 100vw;
-    padding: 2rem 3rem;
-    align-items: left;
+    position: relative;
+    /* Added for absolute positioning of h1 */
+    align-items: center;
+    justify-content: flex-start;
+    /* Aligns items to the left */
+    padding: 30px;
+    padding-left: 70px;
+    /* Adjust as needed */
+    height: 100px;
+    /* Adjust as needed */
+    z-index: 10;
 }
 
-#leftblock {
-    width: 33%;
-    display: grid;
-    justify-items: start;
-    justify-content: start;
+.header img {
+    height: 75px;
+    /* Adjust as needed */
 }
 
-#rightblock {
-    max-width: 66%;
-    display: grid;
-    justify-content: start;
-    justify-items: start;
-}
-
-#logo {
-    height: 90px;
-    width: auto;
-}
-
-h1 {
+.header h1 {
+    position: absolute;
+    /* Position h1 absolutely within header */
+    left: 50%;
+    /* Center h1 */
+    transform: translateX(-50%);
+    /* Offset by half of h1's width */
+    margin: 0;
+    color: #E1DCD1;
+    font-size: 57px;
     font-family: Montserrat;
-    font-size: 3.5625rem;
-    font-style: normal;
     font-weight: 900;
-    line-height: normal;
-    text-transform: uppercase;
-    max-width: fit-content;
-    background-color: #E1DCD1;
-    color: transparent;
-    text-shadow: 0px 0px 3px #dcd8cf;
-    -webkit-background-clip: text;
-    background-clip: text;
 }
 
-.pages {
-    color: var(--grey, #B8B8B8);
-    font-family: "Bebas Neue";
-    font-size: 3.0625rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.21438rem;
+.nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+.nav a {
     text-decoration: none;
-}
-
-nav {
-    width: 100%; 
-    height: 100%; 
-    justify-content: space-evenly; 
-    align-items: center; 
-    display: inline-flex
+    font-size: 49px;
+    font-family: Bebas Neue;
+    font-weight: 400;
+    letter-spacing: 3.43px;
+    z-index: 10;
 }
 
 #about, #career {
-    color: var(--grey);
+    color: #B8B8B8;
 }
 
 #people, #projects {
-    color: var(--beige);
+    color: #CFBE94;
 }
 
-.background {
-    position: absolute;
-    bottom: 0px;
-}
+.hero-section { 
+    position: fixed; /* Fixed positioning */
+    bottom: 0; /* Align to bottom */
+    left: 0;
+    width: 100%; /* Full width */
+    z-index: 1; /* Behind content but above the background */
+  }
+  .hero-image { 
+    max-width: 100%; 
+    height: auto; /* Maintain aspect ratio */
+  }
+  /* Add some padding to the bottom of the body to ensure it doesn't hide behind the hero image */
+  body {
+    padding-bottom: 200px; /* Adjust to the height of your hero image */
+  }
