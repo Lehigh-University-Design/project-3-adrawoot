@@ -1,29 +1,58 @@
-#rightblock {
-    padding-left: 5% !important
-}
-
 #about {
-    background: url(../img/metal-bg.png) #000000 20% / contain no-repeat;
+    padding-bottom: 0;
+}
+.container {
+    background-image: url('../img/Background-black.png'); /* Path to your background image */
+    background-size: stretch; /* Cover the entire page */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
 }
 
 .content {
     display: flex;
-    width: 100vw;
-    padding: 2rem 3rem;
-    align-items: center;
-    justify-content: space-evenly;
+    position: relative; /* This will allow absolute positioning of elements inside */
+    z-index: 2; /* Ensures content is above the fixed hero image */
+    max-width: 1200px; /* Adjust as per design */
+    margin: auto; /* Centers the content block */
+    padding-top: 15px; /* Space above content, adjust as needed */
 }
 
-#image {
-    max-width: 33%;
-    display: grid;
-    justify-items: start;
-    justify-content: start;
+.photo {
+    flex: 1;
+    position: relative;
 }
 
-#text {
-    max-width: 60%;
-    display: grid;
-    justify-content: start;
-    justify-items: start;
+.portrait {
+    width: 100%;
+    height: auto;
+    display: block; /* Ensures no margin/padding around image */
+    opacity: 0.7; /* Adjust based on the actual image opacity */
+    object-fit:contain;
+}
+
+.text {
+    flex: 1;
+    padding: 0 5%; /* Adjust as per design */
+    z-index: 3; /* Ensures text is above the fixed hero image */
+}
+
+.text p {
+    font-family: Lato;
+    font-size: 18px;
+    line-height: 1.6; /* Adjust as per design */
+}
+
+/* Consider the responsive design from the previous code if needed */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .photo, .text {
+        max-width: 100%;
+    }
+
+    .portrait {
+        margin-bottom: 30px;
+    }
 }

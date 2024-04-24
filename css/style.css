@@ -38,6 +38,8 @@ body {
     font-size: 57px;
     font-family: Montserrat;
     font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .nav {
