@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Lato', sans-serif;
     background-color: black;
     color: white;
 }
@@ -39,6 +39,7 @@ body {
     font-family: Montserrat;
     font-weight: 900;
     text-transform: uppercase;
+    text-shadow: 1px 1px 2px black;
     letter-spacing: 2px;
 }
 

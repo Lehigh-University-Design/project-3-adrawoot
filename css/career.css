@@ -1,0 +1,173 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: url('../img/Background - timeline.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Lato;
+}
+
+.header {
+    display: flex;
+    top: 0;
+    /* Added for absolute positioning of h1 */
+    align-items: center;
+    justify-content: flex-start;
+    /* Aligns items to the left */
+    padding: 30px;
+    padding-left: 70px;
+    /* Adjust as needed */
+    width: 100%;
+    height: 100px;
+    /* Adjust as needed */
+    z-index: 10;
+}
+
+.header img {
+    height: 75px;
+    /* Adjust as needed */
+}
+
+.header h1 {
+    position: absolute;
+    /* Position h1 absolutely within header */
+    left: 50%;
+    /* Center h1 */
+    transform: translateX(-50%);
+    /* Offset by half of h1's width */
+    margin: 0;
+    color: #E1DCD1;
+    font-size: 57px;
+    font-family: Montserrat;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px black;
+    letter-spacing: 2px;
+}
+
+#quote-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 200px); /* Adjust height for the header */
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+#quote {
+    width: 45%;
+    color: #CFCFCF;
+    font-family: Lato;
+    letter-spacing: 4.69px;
+    font-size: 50px;
+    font-weight: 600;
+    font-style: italic;
+    word-wrap: break-word
+}
+
+#timeline {
+    position: relative;
+    width: 80%;
+    margin: 2rem auto;
+    padding-top: 10px; /* Spacing for the line to start */
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%; /* Center the line */
+    transform: translateX(-50%);
+    height: 100%;
+    width: 2px; /* Adjust the thickness of the line */
+    background-color: #E1DCD1; /* Color of the line */
+    z-index: 1; /* Ensure it's behind the events */
+}
+
+.timeline-event {
+    display: flex;
+    align-items: center;
+    margin: 2rem 2rem;
+    position: relative;
+    height: 100vh;
+}
+
+/* For odd-numbered events, image on the left and content on the right */
+.timeline-event:nth-child(even) {
+    flex-direction: row;
+}
+
+/* For even-numbered events, content on the left and image on the right */
+.timeline-event:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.event-ellipse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35px;
+    height: 35px;
+    background-color: #FFFFFF;
+    border: 3px solid #757575; /* Adjust the color and size as needed for the stroke */
+    border-radius: 50%; /* This will make the box a circle */
+    z-index: 2;
+}
+
+.event-image img {
+    width: 100%;
+    max-width: 500px;
+}
+
+.event-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    max-width: 50%;
+}
+
+.event-title, .description {
+    z-index: 3;
+    padding-left: 50px; /* This padding applies for visual space inside the content box */
+    padding-right: 50px;
+}
+
+.event-title {
+    font-family: Lato;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #E1DCD1;
+    text-shadow: 1px 1px 2px black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.description {
+    font-size: 1rem;
+    color: #fff;
+    text-align: left;
+    padding-bottom: 30px;
+}
+
+/* Adjust margins for content and image based on direction */
+.timeline-event:nth-child(even) .event-content {
+    margin-left: 40px; /* Increased space for odd events */
+}
+
+.timeline-event:nth-child(odd) .event-content {
+    margin-right: 40px; /* Increased space for even events */
+}
+
+.timeline-event:nth-child(even) .event-image {
+    margin-right: 40px; /* Increased space for odd events */
+}
+
+.timeline-event:nth-child(odd) .event-image {
+    margin-left: 40px; /* Increased space for even events */
+}

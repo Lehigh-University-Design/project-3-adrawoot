@@ -16,9 +16,10 @@
     z-index: 2; /* Ensures content is above the fixed hero image */
     max-width: 1200px; /* Adjust as per design */
     margin: auto; /* Centers the content block */
-    padding-top: 15px; /* Space above content, adjust as needed */
     justify-content: center;
-    flex-grow: 1
+    flex-grow: 1;
+    padding-top: 80px;
+    align-items: center;
 }
 
 .photo {
