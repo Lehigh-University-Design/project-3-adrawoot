@@ -1,4 +1,4 @@
-#about, #projects {
+#projects  {
     padding-bottom: 0;
 }
 .container {
@@ -6,8 +6,10 @@
     background-size: stretch; /* Cover the entire page */
     background-position: center; /* Center the image */
     background-repeat: no-repeat;
-    min-height: 100vh;
+    max-height: 100vh;
+    height:100vh;
     flex-direction: column;
+    overflow: hidden; /* Prevents scrolling */
 }
 
 .content {
@@ -15,11 +17,31 @@
     position: relative; /* This will allow absolute positioning of elements inside */
     z-index: 2; /* Ensures content is above the fixed hero image */
     max-width: 1200px; /* Adjust as per design */
-    margin: auto; /* Centers the content block */
+    margin: auto; /* Centers the content block horizontally */
     justify-content: center;
     flex-grow: 1;
-    padding-top: 80px;
-    align-items: center;
+    align-items: center; /* Centers the content vertically */
+    max-height: calc(100vh - 160px); /* Ensures the full viewport height is used, adjusting for the header if necessary */
+    min-height: calc(100vh - 160px);
+    flex-direction: row; /* Keeps items in a horizontal line */
+}
+
+.photo, .text {
+    flex: 1; /* Ensures that photo and text take up equal space in the container */
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+    }
+
+    .photo, .text {
+        max-width: 100%; /* Allows each block to fill the container */
+    }
+
+    .portrait {
+        margin-bottom: 30px; /* Provides separation between the photo and text blocks */
+    }
 }
 
 .photo {

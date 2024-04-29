@@ -11,10 +11,11 @@ body {
     position: relative;
     /* Added for absolute positioning of h1 */
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     /* Aligns items to the left */
     padding: 30px;
     padding-left: 70px;
+    padding-right: 70px;
     /* Adjust as needed */
     height: 100px;
     /* Adjust as needed */
