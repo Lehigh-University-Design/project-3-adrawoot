@@ -30,7 +30,7 @@
         </div>
         <section class="content">
             <div class="photo">
-                <img src="../img/KB-reflection.png" alt="Portrait" class="portrait">
+                <img src="../img/about/KB-reflection.png" alt="Portrait" class="portrait">
             </div>
             <div class="text">
                 <p>
@@ -54,14 +54,17 @@
             const text = document.querySelector('.text p'); // Target the p within .text
 
             if (document.getElementById('one').checked) {
-                image.src = '../img/people/MJ 1.png'; // Update the source of the image
+                image.src = '../img/about/KB-Grind.png'; // Update the source of the image
                 text.textContent = 'Text for Option One'; // Update the text content
+                text.style.color = '#B8B8B8'; 
             } else if (document.getElementById('two').checked) {
-                image.src = '../img/people/MJ.png'; // Return to original image
+                image.src = '../img/about/KB-reflection.png'; // Return to original image
                 text.textContent = 'Lorem 50'; // Update the text content
+                
             } else if (document.getElementById('three').checked) {
-                image.src = '../img/people/MJ 2.png'; // Update to another image
+                image.src = '../img/about/KB-wonder.png'; // Update to another image
                 text.textContent = 'Text for Option Three'; // Update the text content
+                text.style.color = '#CFBE97';
             }
         });
     });

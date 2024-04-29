@@ -55,12 +55,15 @@
             if (document.getElementById('one').checked) {
                 image.src = '../img/people/MJ 1.png'; // Update the source of the image
                 text.textContent = 'Text for Option One'; // Update the text content
+                text.style.color = '#B8B8B8';
             } else if (document.getElementById('two').checked) {
                 image.src = '../img/people/MJ.png'; // Return to original image
                 text.textContent = 'Lorem 50'; // Update the text content
+                text.style.color = '#E1DCD1';
             } else if (document.getElementById('three').checked) {
                 image.src = '../img/people/MJ 2.png'; // Update to another image
                 text.textContent = 'Text for Option Three'; // Update the text content
+                text.style.color = '#CFBE97';
             }
         });
     });
