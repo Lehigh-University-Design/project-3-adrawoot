@@ -19,72 +19,85 @@
 
 .content {
     display: flex;
-    position: relative; /* This will allow absolute positioning of elements inside */
-    z-index: 2; /* Ensures content is above the fixed hero image */
-    max-width: 1200px; /* Adjust as per design */
-    margin: auto; /* Centers the content block horizontally */
-    justify-content: center;
+    position: relative; /* Allows absolute positioning within */
+    z-index: 2; /* Ensures content is above any underlying elements */
+    max-width: 1200px; /* Limit width to prevent overflow */
+    width: 100%; /* Ensure it uses full available width */
+    margin: auto auto 0 auto; /* Centers content and adds top margin to account for header */
+    justify-content: center; /* Center the content within */
     flex-grow: 1;
-    align-items: center; /* Centers the content vertically */
+    align-items: center; /* Vertically center the content within */
+    flex-direction: row; /* Layout children in a row */
+    overflow: hidden; /* Hides any overflowing elements */
+    padding: 20px; /* Provides padding to prevent elements from touching the edges */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
     max-height: calc(100vh - 160px); /* Ensures the full viewport height is used, adjusting for the header if necessary */
     min-height: calc(100vh - 160px);
-    flex-direction: row; /* Keeps items in a horizontal line */
 }
 
 .photo, .text {
-    flex: 1; /* Ensures that photo and text take up equal space in the container */
-}
-
-@media (max-width: 768px) {
-    .content {
-        flex-direction: column; /* Stack elements vertically on smaller screens */
-    }
-
-    .photo, .text {
-        max-width: 100%; /* Allows each block to fill the container */
-    }
-
-    .portrait {
-        margin-bottom: 30px; /* Provides separation between the photo and text blocks */
-    }
+    flex: 1; /* Each takes up equal space */
+    margin: 10px; /* Adds margin to prevent touching each other */
+    box-sizing: border-box; /* Adjusts box model to include padding and border */
 }
 
 .photo {
-    flex: 1;
     position: relative;
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
 }
 
 .portrait {
-    width: 100%;
+    width: 100%; /* Full width of the parent div */
     max-height: calc(.90 * (100vh - 160px));
-    display: block; /* Ensures no margin/padding around image */
-    opacity: 0.7; /* Adjust based on the actual image opacity */
-    object-fit:contain;
+    object-fit: contain; /* Ensures the image is fully visible within the assigned dimensions */
 }
 
 .text {
-    flex: 1;
-    padding: 0 5%; /* Adjust as per design */
-    z-index: 3; /* Ensures text is above the fixed hero image */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+    padding: 0 5%; /* Adds padding inside text div */
+    box-sizing: border-box; /* Adjusts box model to include padding and border */
 }
 
 .text p {
-    font-family: Lato;
-    font-size: 18px;
-    line-height: 1.6; /* Adjust as per design */
+    font-family: 'Lato', sans-serif;
+    color: #E1DCD1;
+    font-size: calc (16px + 0.5vw); /* Adjust based on your specific needs */
+    line-height: 1.6; /* Tighter line height to fit more text */
+    margin: 0;
+    max-height: 60vh; /* Confines text to this height */
+    min-width: 55vh;
+    overflow-y: auto; /* Allows scrolling if text exceeds the area */
 }
 
 /* Consider the responsive design from the previous code if needed */
+
 @media (max-width: 768px) {
     .content {
-        flex-direction: column;
+        flex-direction: column; /* Stack elements vertically */
+        margin-top: 20px; /* Adjust top margin to account for header height */
+        padding: 10px; /* Reduces padding in smaller screens */
     }
 
     .photo, .text {
-        max-width: 100%;
+        max-width: 100%; /* Full width for smaller screens */
+        flex: none; /* Disable flex to avoid sizing issues */
+        margin: 20px 0; /* Adjusts margin for vertical stacking */
+    }
+    .text p {
+        font-size: calc (12px + 0.5vw);
     }
 
     .portrait {
-        margin-bottom: 30px;
+        max-height: 40vh; /* Adjusts maximum height relative to screen size */
     }
+
+    .header {
+       display: grid;
+       row-gap: 60px;
+    }
+    
 }

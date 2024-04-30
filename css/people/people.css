@@ -131,10 +131,14 @@ a {
 }
 
 .description {
-    font-size: 1rem;
+    font-size: calc(1rem + 0.5vw);
     color: #fff;
     text-align: left;
     padding-bottom: 30px;
+    line-height: 1.6;
+    min-width: 35vw;
+    max-height: 400px;
+    overflow-y: scroll;
 }
 
 /* Adjust margins for content and image based on direction */
@@ -152,4 +156,39 @@ a {
 
 .timeline-event:nth-child(odd) .event-image {
     margin-left: 40px; /* Increased space for even events */
+}
+
+@media (max-width: 768px) {
+    .timeline {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .timeline-event {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align the elements */
+        margin-bottom: 100px; /* Space between each event */
+        box-sizing: border-box;
+    }
+
+    .event-content, .event-image {
+        max-width: 100%; /* Full width to ensure it fits smaller screens */
+    }
+
+    .timeline-event:nth-child(even), .timeline-event:nth-child(odd) {
+        flex-direction: column; /* Override previous row and row-reverse settings */
+    }
+
+    .event-title, .description {
+        text-align: center; /* Center-align text for readability on smaller screens */
+        padding: 20px; /* Adequate padding around text */
+        min-width: auto; /* Remove the minimum width constraint */
+    }
+
+    .description {
+        max-height: 300px; /* Adjust height for mobile */
+        overflow-y: auto; /* Make overflow scrollable if necessary */
+        text-align: center; /* Center-align text for readability */
+        padding: 0 10px; /* Slightly reduce padding for smaller screens */
+    }
+
 }

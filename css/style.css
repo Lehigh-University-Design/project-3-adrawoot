@@ -24,6 +24,7 @@ body {
 
 .header img {
     height: 75px;
+    justify-content: center;
     /* Adjust as needed */
 }
 
@@ -39,6 +40,7 @@ body {
     font-size: 57px;
     font-family: Montserrat;
     font-weight: 900;
+    text-align:center;
     text-transform: uppercase;
     text-shadow: 1px 1px 2px black;
     letter-spacing: 2px;
@@ -73,12 +75,80 @@ body {
     left: 0;
     width: 100%; /* Full width */
     z-index: 1; /* Behind content but above the background */
-  }
-  .hero-image { 
+}
+
+.hero-image { 
     max-width: 100%; 
     height: auto; /* Maintain aspect ratio */
-  }
-  /* Add some padding to the bottom of the body to ensure it doesn't hide behind the hero image */
-  body {
+}
+/* Add some padding to the bottom of the body to ensure it doesn't hide behind the hero image */
+body {
     padding-bottom: 200px; /* Adjust to the height of your hero image */
-  }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 20px;
+        align-items: center; /* Center align items in the header */
+        z-index: 3; /* Ensures header is above the hero section */
+    }
+
+    .header img {
+        height: 50px; /* Smaller logo on mobile */
+    }
+
+    .header h1 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        text-align: center; /* Ensure h1 is centered */
+        font-size: 28px; /* Smaller font size */
+        margin-top: 10px; /* Add margin for spacing */   
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center; /* Center-align nav items */
+        padding: 10px 0;
+        z-index: 3; /* Above the hero image */
+    }
+
+    .nav a {
+        font-size: 24px; /* Smaller font size */
+        padding: 10px; /* Increased padding for better touch target */
+    }
+    
+    .hero-section {
+        position: fixed; /* Keep relative to allow natural flow */
+        bottom: 0;
+        width: 100%; /* Full width */
+        height: 50vh; /* Adjusted height to occupy half of the viewport */
+        z-index: 1; /* Lowest, ensuring all text and nav are above */
+        overflow: hidden; /* Hide any overflow */
+    }
+
+    .hero-image {
+        width: 100%; /* Ensure full width */
+        height: 100%; /* Make height fill the container */
+        object-fit: cover; /* Cover the area without losing aspect ratio */
+        position: absolute; /* Absolute position to allow full control within hero section */
+        bottom: 0;
+    }
+    
+    body {
+        padding-bottom: 50vh; /* Ensure padding matches the hero section height */
+        margin: 0; /* Remove default margin */
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 22px; /* Even smaller font size for very small devices */
+    }
+
+    .nav a {
+        font-size: 20px; /* Smaller font size for links */
+    }
+}
